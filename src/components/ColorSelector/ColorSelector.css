@@ -1,0 +1,111 @@
+.color-shirt,
+.color-pants {
+    background: rgb(206, 206, 206);
+    width: var(--_pick_size);
+    height: var(--_pick_size);
+    border-radius: 8px;
+    position: absolute;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+}
+.color-shirt:hover,
+.color-pants:hover {
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.3);
+} 
+.color-shirt::before,
+.color-pants::before{
+    content: "";
+    display: block;
+    width: calc(var(--_size)/1.8);
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+}
+.color-shirt::after,
+.color-pants::after{
+    content: "";
+    display: block;
+    width: calc(var(--_size)/1.2);
+    height: calc(var(--_size)/1.2);
+
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: -1;
+}
+.color-shirt::after{left: -600%; top: -300%; background: rgba(0, 0, 80, 0.05); scale: 1.2;}
+.color-pants::after{left: -180%; top: -400%; background: rgba(80, 0, 0, 0.05);}
+
+.color-shirt {
+    right: -20%;
+    top: 8%;
+}
+
+.man.card ~ .color-shirt {
+    top: 14%;
+}
+.color-shirt::before{
+    right: 100%;
+    rotate: -15deg;
+    transform-origin: 100% 50%;
+}
+.color-pants {
+    left: -20%;
+    top: 45%;
+}
+.color-pants::before{
+    left: 100%;
+    rotate: 15deg;
+    transform-origin: 0% 50%;
+}
+.option {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    cursor: pointer !important;
+    top: 0;
+    pointer-events: none;
+    box-shadow: 
+    inset 0 0 0 0px white,
+    0 0 0px 1px rgba(0, 0, 0, 0.2);
+}
+.color-shirt.active .option, .color-pants.active .option { opacity: 1; pointer-events: all; }
+
+.color-shirt.active .option:nth-child(1), .color-pants.active .option:nth-child(1) { top: 120%;}
+.color-shirt.active .option:nth-child(2), .color-pants.active .option:nth-child(2) { top: 240%;}
+.color-shirt.active .option:nth-child(3), .color-pants.active .option:nth-child(3) { top: 360%;}
+.color-shirt.active .option:nth-child(4), .color-pants.active .option:nth-child(4) { top: 480%;}
+.color-shirt.active .option:nth-child(4), .color-pants.active .option:nth-child(4) { top: 480%;}
+
+
+.option:hover {
+    box-shadow: 
+    inset 0 0 0 3px white,
+    0 0 0px 1px rgba(0, 0, 0, 0.08);
+}
+
+.option.picker input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.shadows_shirt,
+.shadows_pants {
+    position: relative;
+    display: none;
+}
+.color-block {
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
