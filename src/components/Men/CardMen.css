@@ -1,0 +1,45 @@
+
+.man * {
+    width: 100%;
+    height: 100%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-position: 50% 50%;
+    mask-position: 50% 50%;
+    position: absolute;
+}
+
+.man.card {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    transform: rotateY(0deg);
+    display: block;
+    opacity: 1;
+}
+
+.man img {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    object-position: 50% 50%;
+    image-rendering: optimizeQuality;
+    left: 0;
+    top: 0;
+}
+
+.mask {
+    position: absolute;
+}
+
+.man .mask#shirt-target {
+    -webkit-mask-image: url('https://res.cloudinary.com/djclvnzg1/image/upload/v1687882867/man_coat_pdoqp0.png');
+    mask-image: url('https://res.cloudinary.com/djclvnzg1/image/upload/v1687882867/man_coat_pdoqp0.png');
+}
+.man .mask#pants-target {
+    -webkit-mask-image: url('https://res.cloudinary.com/djclvnzg1/image/upload/v1687882867/man_pants_oe5q6h.png');
+    mask-image: url('https://res.cloudinary.com/djclvnzg1/image/upload/v1687882867/man_pants_oe5q6h.png');
+}
