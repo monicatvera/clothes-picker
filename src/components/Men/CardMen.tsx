@@ -1,5 +1,25 @@
+import { useEffect } from "react";
 import "./CardMen.css";
-const CardMen = () => {
+
+interface CardMenProps {
+  shirtColor: string;
+  pantsColor: string;
+}
+
+const CardMen = ({ shirtColor, pantsColor }: CardMenProps) => {
+  useEffect(() => {
+    const shirtTarget = document.getElementById("shirt-target");
+    const pantsTarget = document.getElementById("pants-target");
+
+    if (shirtTarget) {
+      shirtTarget.style.background = shirtColor;
+    }
+
+    if (pantsTarget) {
+      pantsTarget.style.background = pantsColor;
+    }
+  }, [shirtColor, pantsColor]);
+
   return (
     <div className="man card">
       <img

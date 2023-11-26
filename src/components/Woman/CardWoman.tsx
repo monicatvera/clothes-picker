@@ -1,5 +1,25 @@
+import { useEffect } from "react";
 import "./CardWoman.css";
-function CardWoman() {
+
+interface CardWomanProps {
+  blouseColor: string;
+  skirtColor: string;
+}
+
+function CardWoman({ blouseColor, skirtColor }: CardWomanProps) {
+  useEffect(() => {
+    const blouseTarget = document.getElementById("blouse-target");
+    const skirtTarget = document.getElementById("skirt-target");
+
+    if (blouseTarget) {
+      blouseTarget.style.background = blouseColor;
+    }
+
+    if (skirtTarget) {
+      skirtTarget.style.background = skirtColor;
+    }
+  }, [blouseColor, skirtColor]);
+
   return (
     <div className="woman card">
       <img

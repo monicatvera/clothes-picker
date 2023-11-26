@@ -23,7 +23,11 @@ function App() {
   };
   return (
     <div className="model">
-      {selectedGender === "men" ? <CardMen /> : <CardWoman />}
+      {selectedGender === "men" ? (
+        <CardMen shirtColor={shirtColor} pantsColor={pantsColor} />
+      ) : (
+        <CardWoman blouseColor={shirtColor} skirtColor={pantsColor} />
+      )}
       <ColorSelector
         id="shirt"
         value={shirtColor}
